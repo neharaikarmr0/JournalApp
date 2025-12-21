@@ -2,6 +2,7 @@ package com.raikar.journal.entity;
 
 import java.time.LocalDateTime;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -14,14 +15,14 @@ import lombok.Setter;
 public class JournalEntry {
 
 	@Id
-	private Long id;
+	private ObjectId id;
 	private String title;
 	private String desc;
 	private LocalDateTime dateTime;
-	public Long getId() {
+	public ObjectId getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(ObjectId id) {
 		this.id = id;
 	}
 	public String getTitle() {
