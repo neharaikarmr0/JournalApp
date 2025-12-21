@@ -1,1 +1,1 @@
-# JournalApplication
+# Journal Application
