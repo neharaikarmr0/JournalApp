@@ -38,6 +38,7 @@ public class JournalController {
 	@PostMapping("addEntry/{username}")
 	public ResponseEntity<JournalEntry> addEntry(@RequestBody JournalEntry j, @PathVariable String username) {
 		try {
+			System.out.println("inside addEntry method");
 			journalService.addEntry(j,username);
 			return new ResponseEntity<>(j,HttpStatus.CREATED);
 		}catch(Exception e) {
