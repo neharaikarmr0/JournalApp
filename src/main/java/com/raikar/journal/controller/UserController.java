@@ -32,6 +32,7 @@ public class UserController {
 			service.addUser(u);
 			return new ResponseEntity<>(u,HttpStatus.CREATED);
 		}catch(Exception e) {
+			
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
 	}
