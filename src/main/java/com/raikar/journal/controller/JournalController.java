@@ -24,6 +24,7 @@ import com.raikar.journal.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
+
 @RestController
 @RequestMapping("journal")
 @Slf4j
@@ -38,7 +39,7 @@ public class JournalController {
 	@PostMapping("addEntry/{username}")
 	public ResponseEntity<JournalEntry> addEntry(@RequestBody JournalEntry j, @PathVariable String username) {
 		try {
-			System.out.println("inside addEntry method!");
+			log.info("inside addEntry method!");
 			journalService.addEntry(j,username);
 			return new ResponseEntity<>(j,HttpStatus.CREATED);
 		}catch(Exception e) {
@@ -49,6 +50,7 @@ public class JournalController {
 	@GetMapping("getUserEntries/{username}")
 	public ResponseEntity<?> getAllEntries(@PathVariable String username){
 		try {
+			log.info("inside getAllEntries method!");
 			List<JournalEntry> allEntries = null;
 			Optional<User> user = userService.getUserByUsername(username);
 			if(user.isPresent()) {
@@ -68,6 +70,7 @@ public class JournalController {
 	@GetMapping("getById/{id}")
 	public ResponseEntity<?> getEntryById(@PathVariable ObjectId id) {
 		try {
+			log.info("inside getEntryById method!");
 			Optional<JournalEntry> j = journalService.getEntryById(id);
 			if(j.isPresent() ){
 				return new ResponseEntity<>(j.get(), HttpStatus.OK);
@@ -81,6 +84,7 @@ public class JournalController {
 	@PutMapping("updateById/{id}")
 	public ResponseEntity<?>  updateByIdD(@RequestBody JournalEntry j,@PathVariable ObjectId id, String username) {
 		try {
+			log.info("inside updateByIdD method!");
 			JournalEntry j1 = journalService.getEntryById(id).orElse(null);
 			if(j1!=null ){
 				j1.setTitle(j.getTitle()!=null && !j.getTitle().equals("")?j.getTitle():j1.getTitle());
@@ -97,6 +101,7 @@ public class JournalController {
 	@DeleteMapping("deleteById/{username}/{id}")
 	public ResponseEntity<?> deleteById(@PathVariable String username, @PathVariable ObjectId id) {
 		try {
+			log.info("inside deleteById method!");
 				journalService.deleteById(username,id);
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}catch(Exception e) {
