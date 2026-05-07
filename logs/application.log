@@ -1,62 +1,625 @@
-2026-03-29 19:50:53 [main] INFO  c.raikar.journal.JournalApplication - Starting JournalApplication using Java 21.0.7 with PID 77433 (/Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp/target/classes started by nehamanjunathraikar in /Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp)
-2026-03-29 19:50:53 [main] INFO  c.raikar.journal.JournalApplication - No active profile set, falling back to 1 default profile: "default"
-2026-03-29 19:50:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2026-03-29 19:50:54 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34 ms. Found 2 MongoDB repository interfaces.
-2026-03-29 19:50:54 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-03-29 19:50:54 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-03-29 19:50:54 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-03-29 19:50:54 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-03-29 19:50:54 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 816 ms
-2026-03-29 19:50:56 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"application": {"name": "Cluster0"}, "driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "15.6"}, "platform": "Java/Eclipse Adoptium/21.0.7+6-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='neha', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@372461a9, com.mongodb.Jep395RecordCodecProvider@5fffb692, com.mongodb.KotlinCodecProvider@48cb2d73, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.egajdca.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-ohep9w-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='Cluster0', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
-2026-03-29 19:50:56 [main] INFO  org.mongodb.driver.cluster - Waiting for server to become available for operation createIndexes with ID 2. Remaining time: 29997 ms. Selector: WritableServerSelector, topology description: {type=UNKNOWN, servers=[].
-2026-03-29 19:50:57 [cluster-ClusterId{value='69c93548cc2a6a5014bb2fb7', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017 to client view of cluster
-2026-03-29 19:50:57 [cluster-ClusterId{value='69c93548cc2a6a5014bb2fb7', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017 to client view of cluster
-2026-03-29 19:50:57 [cluster-ClusterId{value='69c93548cc2a6a5014bb2fb7', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 to client view of cluster
-2026-03-29 19:50:57 [cluster-ClusterId{value='69c93548cc2a6a5014bb2fb7', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=263231208, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=308, topologyVersion=TopologyVersion{processId=69b855d61ccbf0fc333c315b, counter=4}, lastWriteDate=Sun Mar 29 19:50:57 IST 2026, lastUpdateTimeNanos=20672476518750}
-2026-03-29 19:50:57 [cluster-ClusterId{value='69c93548cc2a6a5014bb2fb7', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=260667125, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az3'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=308, topologyVersion=TopologyVersion{processId=69b85b6ea858829914fa66a1, counter=3}, lastWriteDate=Sun Mar 29 19:50:57 GMT+05:30 2026, lastUpdateTimeNanos=20672476496917}
-2026-03-29 19:50:57 [cluster-ClusterId{value='69c93548cc2a6a5014bb2fb7', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=260119750, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000016a, setVersion=308, topologyVersion=TopologyVersion{processId=69b858a228a812e91dcbd452, counter=6}, lastWriteDate=Sun Mar 29 19:50:57 GMT+05:30 2026, lastUpdateTimeNanos=20672476504167}
-2026-03-29 19:50:57 [cluster-ClusterId{value='69c93548cc2a6a5014bb2fb7', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 with max election id 7fffffff000000000000016a and max set version 308
-2026-03-29 19:50:58 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-03-29 19:50:58 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
-2026-03-29 19:50:58 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2026-03-29 19:50:58 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2026-03-29 19:56:19 [main] INFO  c.raikar.journal.JournalApplication - Starting JournalApplication using Java 21.0.7 with PID 77534 (/Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp/target/classes started by nehamanjunathraikar in /Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp)
-2026-03-29 19:56:19 [main] INFO  c.raikar.journal.JournalApplication - No active profile set, falling back to 1 default profile: "default"
-2026-03-29 19:56:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
-2026-03-29 19:56:20 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 2 MongoDB repository interfaces.
-2026-03-29 19:56:20 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
-2026-03-29 19:56:20 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2026-03-29 19:56:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-03-29 19:56:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
-2026-03-29 19:56:20 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 808 ms
-2026-03-29 19:56:21 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"application": {"name": "Cluster0"}, "driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "15.6"}, "platform": "Java/Eclipse Adoptium/21.0.7+6-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='neha', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@5fffb692, com.mongodb.Jep395RecordCodecProvider@48cb2d73, com.mongodb.KotlinCodecProvider@243bf087, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.egajdca.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-ohep9w-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='Cluster0', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
-2026-03-29 19:56:22 [main] INFO  org.mongodb.driver.cluster - Waiting for server to become available for operation createIndexes with ID 2. Remaining time: 29996 ms. Selector: WritableServerSelector, topology description: {type=UNKNOWN, servers=[].
-2026-03-29 19:56:22 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017 to client view of cluster
-2026-03-29 19:56:22 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017 to client view of cluster
-2026-03-29 19:56:22 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 to client view of cluster
-2026-03-29 19:56:23 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=265919875, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=308, topologyVersion=TopologyVersion{processId=69b855d61ccbf0fc333c315b, counter=4}, lastWriteDate=Sun Mar 29 19:56:23 IST 2026, lastUpdateTimeNanos=20998128875250}
-2026-03-29 19:56:23 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=265873083, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000016a, setVersion=308, topologyVersion=TopologyVersion{processId=69b858a228a812e91dcbd452, counter=6}, lastWriteDate=Sun Mar 29 19:56:23 IST 2026, lastUpdateTimeNanos=20998128864167}
-2026-03-29 19:56:23 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=265945958, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az3'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=308, topologyVersion=TopologyVersion{processId=69b85b6ea858829914fa66a1, counter=3}, lastWriteDate=Sun Mar 29 19:56:23 IST 2026, lastUpdateTimeNanos=20998128857917}
-2026-03-29 19:56:23 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 with max election id 7fffffff000000000000016a and max set version 308
-2026-03-29 19:56:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2026-03-29 19:56:24 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2026-03-29 19:56:24 [main] INFO  c.raikar.journal.JournalApplication - Started JournalApplication in 4.775 seconds (process running for 5.478)
-2026-03-29 19:56:56 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-03-29 19:56:56 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-03-29 19:56:56 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2026-03-29 19:56:56 [http-nio-8080-exec-1] INFO  c.r.j.controller.JournalController - inside addEntry method!
+2026-05-07 20:19:21 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketException: ac-3xnzrvh-shard-00-01.egajdca.mongodb.net
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:75)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:100)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.UnknownHostException: ac-3xnzrvh-shard-00-01.egajdca.mongodb.net
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1191)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at com.mongodb.internal.connection.DefaultInetAddressResolver.lookupByName(DefaultInetAddressResolver.java:34)
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:71)
+	... 6 common frames omitted
+2026-05-07 20:19:31 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketException: ac-3xnzrvh-shard-00-00.egajdca.mongodb.net: nodename nor servname provided, or not known
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:75)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:100)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.UnknownHostException: ac-3xnzrvh-shard-00-00.egajdca.mongodb.net: nodename nor servname provided, or not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at com.mongodb.internal.connection.DefaultInetAddressResolver.lookupByName(DefaultInetAddressResolver.java:34)
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:71)
+	... 6 common frames omitted
+2026-05-07 20:19:31 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketException: ac-3xnzrvh-shard-00-02.egajdca.mongodb.net
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:75)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:100)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.UnknownHostException: ac-3xnzrvh-shard-00-02.egajdca.mongodb.net
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1191)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at com.mongodb.internal.connection.DefaultInetAddressResolver.lookupByName(DefaultInetAddressResolver.java:34)
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:71)
+	... 6 common frames omitted
+2026-05-07 20:19:41 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketException: ac-3xnzrvh-shard-00-00.egajdca.mongodb.net
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:75)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:100)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.UnknownHostException: ac-3xnzrvh-shard-00-00.egajdca.mongodb.net
+	at java.base/java.net.InetAddress$CachedLookup.get(InetAddress.java:988)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1191)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at com.mongodb.internal.connection.DefaultInetAddressResolver.lookupByName(DefaultInetAddressResolver.java:34)
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:71)
+	... 6 common frames omitted
+2026-05-07 20:19:51 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketException: ac-3xnzrvh-shard-00-02.egajdca.mongodb.net: nodename nor servname provided, or not known
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:75)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:100)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.UnknownHostException: ac-3xnzrvh-shard-00-02.egajdca.mongodb.net: nodename nor servname provided, or not known
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.base/java.net.Inet6AddressImpl.lookupAllHostAddr(Inet6AddressImpl.java:52)
+	at java.base/java.net.InetAddress$PlatformResolver.lookupByName(InetAddress.java:1211)
+	at java.base/java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1828)
+	at java.base/java.net.InetAddress$NameServiceAddresses.get(InetAddress.java:1139)
+	at java.base/java.net.InetAddress.getAllByName0(InetAddress.java:1818)
+	at java.base/java.net.InetAddress.getAllByName(InetAddress.java:1688)
+	at com.mongodb.internal.connection.DefaultInetAddressResolver.lookupByName(DefaultInetAddressResolver.java:34)
+	at com.mongodb.internal.connection.ServerAddressHelper.getSocketAddresses(ServerAddressHelper.java:71)
+	... 6 common frames omitted
+2026-05-07 20:20:11 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.lambda$open$0(SocketStream.java:85)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:85)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketException: Network is unreachable
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:589)
+	at java.base/sun.nio.ch.Net.connect(Net.java:578)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+	... 4 common frames omitted
+2026-05-07 20:20:11 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.lambda$open$0(SocketStream.java:85)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:85)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketException: Network is unreachable
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:589)
+	at java.base/sun.nio.ch.Net.connect(Net.java:578)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+	... 4 common frames omitted
+2026-05-07 20:20:11 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.lambda$open$0(SocketStream.java:85)
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:85)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:233)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketException: Network is unreachable
+	at java.base/sun.nio.ch.Net.connect0(Native Method)
+	at java.base/sun.nio.ch.Net.connect(Net.java:589)
+	at java.base/sun.nio.ch.Net.connect(Net.java:578)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+	at java.base/java.net.Socket.connect(Socket.java:751)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:76)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:104)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:79)
+	... 4 common frames omitted
+2026-05-07 20:20:27 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketWriteException: Exception sending message
+	at com.mongodb.internal.connection.InternalStreamConnection.throwTranslatedWriteException(InternalStreamConnection.java:785)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:670)
+	at com.mongodb.internal.connection.InternalStreamConnection.trySendMessage(InternalStreamConnection.java:507)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendCommandMessage(InternalStreamConnection.java:482)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceiveInternal(InternalStreamConnection.java:440)
+	at com.mongodb.internal.connection.InternalStreamConnection.lambda$sendAndReceive$0(InternalStreamConnection.java:375)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:378)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:98)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:144)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:78)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:235)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1506)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1421)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+	at java.base/sun.security.ssl.SSLSocketImpl.ensureNegotiated(SSLSocketImpl.java:922)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(SSLSocketImpl.java:1291)
+	at com.mongodb.internal.connection.SocketStream.write(SocketStream.java:165)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:667)
+	... 13 common frames omitted
+2026-05-07 20:20:27 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketWriteException: Exception sending message
+	at com.mongodb.internal.connection.InternalStreamConnection.throwTranslatedWriteException(InternalStreamConnection.java:785)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:670)
+	at com.mongodb.internal.connection.InternalStreamConnection.trySendMessage(InternalStreamConnection.java:507)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendCommandMessage(InternalStreamConnection.java:482)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceiveInternal(InternalStreamConnection.java:440)
+	at com.mongodb.internal.connection.InternalStreamConnection.lambda$sendAndReceive$0(InternalStreamConnection.java:375)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:378)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:98)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:144)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:78)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:235)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1506)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1421)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+	at java.base/sun.security.ssl.SSLSocketImpl.ensureNegotiated(SSLSocketImpl.java:922)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(SSLSocketImpl.java:1291)
+	at com.mongodb.internal.connection.SocketStream.write(SocketStream.java:165)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:667)
+	... 13 common frames omitted
+2026-05-07 20:20:27 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketWriteException: Exception sending message
+	at com.mongodb.internal.connection.InternalStreamConnection.throwTranslatedWriteException(InternalStreamConnection.java:785)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:670)
+	at com.mongodb.internal.connection.InternalStreamConnection.trySendMessage(InternalStreamConnection.java:507)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendCommandMessage(InternalStreamConnection.java:482)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceiveInternal(InternalStreamConnection.java:440)
+	at com.mongodb.internal.connection.InternalStreamConnection.lambda$sendAndReceive$0(InternalStreamConnection.java:375)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:378)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:98)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:47)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:144)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.startHandshake(InternalStreamConnectionInitializer.java:78)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:235)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.setupNewConnectionAndGetInitialDescription(DefaultServerMonitor.java:282)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:253)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1506)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1421)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+	at java.base/sun.security.ssl.SSLSocketImpl.ensureNegotiated(SSLSocketImpl.java:922)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppOutputStream.write(SSLSocketImpl.java:1291)
+	at com.mongodb.internal.connection.SocketStream.write(SocketStream.java:165)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendMessage(InternalStreamConnection.java:667)
+	... 13 common frames omitted
+2026-05-07 20:20:37 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=378822209, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az3'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4c315d2e4160a8b66b07, counter=3}, lastWriteDate=Thu May 07 20:20:37 IST 2026, lastUpdateTimeNanos=90346951047416}
+2026-05-07 20:20:37 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=376799625, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000016e, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4bdf4d9fdfd41b2731e4, counter=6}, lastWriteDate=Thu May 07 20:20:37 IST 2026, lastUpdateTimeNanos=90346950901207}
+2026-05-07 20:20:37 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=376114250, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4b8b7dc64436d824a035, counter=4}, lastWriteDate=Thu May 07 20:20:37 IST 2026, lastUpdateTimeNanos=90346950728791}
+2026-05-07 20:20:37 [cluster-ClusterId{value='69c9368d919b270ee89f7459', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 with max election id 7fffffff000000000000016e and max set version 309
+2026-05-07 20:26:17 [RMI TCP Connection(1489)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-05-07 20:26:17 [RMI TCP Connection(1489)-127.0.0.1] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-07 20:26:17 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-05-07 20:26:17 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-07 20:26:17 [RMI TCP Connection(1489)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-05-07 20:47:27 [main] INFO  c.raikar.journal.JournalApplication - Starting JournalApplication using Java 21.0.7 with PID 5558 (/Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp/target/classes started by nehamanjunathraikar in /Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp)
+2026-05-07 20:47:27 [main] INFO  c.raikar.journal.JournalApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-07 20:47:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-05-07 20:47:28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 2 MongoDB repository interfaces.
+2026-05-07 20:47:28 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-07 20:47:28 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-07 20:47:28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 20:47:28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-05-07 20:47:28 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 840 ms
+2026-05-07 20:47:28 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"application": {"name": "Cluster0"}, "driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "15.6"}, "platform": "Java/Eclipse Adoptium/21.0.7+6-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='neha', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@2f9dda71, com.mongodb.Jep395RecordCodecProvider@58278366, com.mongodb.KotlinCodecProvider@7f5fcfe9, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.egajdca.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-ohep9w-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='Cluster0', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-05-07 20:47:29 [main] INFO  org.mongodb.driver.cluster - Waiting for server to become available for operation createIndexes with ID 2. Remaining time: 29996 ms. Selector: WritableServerSelector, topology description: {type=UNKNOWN, servers=[].
+2026-05-07 20:47:29 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 20:47:30 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 20:47:30 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 20:47:30 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=367097667, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4b8b7dc64436d824a035, counter=4}, lastWriteDate=Thu May 07 20:47:30 IST 2026, lastUpdateTimeNanos=91959740490332}
+2026-05-07 20:47:30 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=367096917, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000016e, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4bdf4d9fdfd41b2731e4, counter=6}, lastWriteDate=Thu May 07 20:47:30 GMT+05:30 2026, lastUpdateTimeNanos=91959740490249}
+2026-05-07 20:47:30 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=367689625, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az3'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4c315d2e4160a8b66b07, counter=3}, lastWriteDate=Thu May 07 20:47:30 GMT+05:30 2026, lastUpdateTimeNanos=91959741075666}
+2026-05-07 20:47:30 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 with max election id 7fffffff000000000000016e and max set version 309
+2026-05-07 20:47:31 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-07 20:47:31 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-07 20:47:31 [main] INFO  c.raikar.journal.JournalApplication - Started JournalApplication in 3.812 seconds (process running for 4.645)
+2026-05-07 20:49:23 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07 20:49:23 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-07 20:49:23 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-05-07 20:49:23 [http-nio-8080-exec-1] INFO  c.r.j.controller.JournalController - inside addEntry method!
+2026-05-07 20:51:43 [http-nio-8080-exec-4] INFO  c.r.j.controller.UserController - inside getAllUsers method!
+2026-05-07 20:51:46 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.createReadTimeoutException(InternalStreamConnection.java:819)
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:807)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:857)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.doHeartbeat(DefaultServerMonitor.java:311)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:262)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+	... 5 common frames omitted
+2026-05-07 20:51:52 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4242608250, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000016e, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4bdf4d9fdfd41b2731e4, counter=6}, lastWriteDate=Thu May 07 20:51:52 GMT+05:30 2026, lastUpdateTimeNanos=92221844111457}
+2026-05-07 20:51:52 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 with max election id 7fffffff000000000000016e and max set version 309
+2026-05-07 20:53:37 [http-nio-8080-exec-7] INFO  c.r.j.controller.JournalController - inside getAllEntries method!
+2026-05-07 20:54:01 [http-nio-8080-exec-9] INFO  c.r.j.controller.UserController - inside getUserByUsername method!
+2026-05-07 20:56:26 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.createReadTimeoutException(InternalStreamConnection.java:819)
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:807)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:857)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.doHeartbeat(DefaultServerMonitor.java:311)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:262)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+	... 5 common frames omitted
+2026-05-07 20:56:26 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=130077375, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4b8b7dc64436d824a035, counter=4}, lastWriteDate=Thu May 07 20:56:26 GMT+05:30 2026, lastUpdateTimeNanos=92469959591374}
+2026-05-07 21:12:31 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.createReadTimeoutException(InternalStreamConnection.java:819)
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:807)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:857)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.doHeartbeat(DefaultServerMonitor.java:311)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:262)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+	... 5 common frames omitted
+2026-05-07 21:12:31 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=57373583, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4b8b7dc64436d824a035, counter=4}, lastWriteDate=Thu May 07 21:12:31 GMT+05:30 2026, lastUpdateTimeNanos=92510135526249}
+2026-05-07 21:12:38 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.createReadTimeoutException(InternalStreamConnection.java:819)
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:807)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:857)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.doHeartbeat(DefaultServerMonitor.java:311)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:262)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+	... 5 common frames omitted
+2026-05-07 21:12:38 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=58667708, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000016e, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4bdf4d9fdfd41b2731e4, counter=6}, lastWriteDate=Thu May 07 21:12:37 GMT+05:30 2026, lastUpdateTimeNanos=92516935799833}
+2026-05-07 21:12:38 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 with max election id 7fffffff000000000000016e and max set version 309
+2026-05-07 21:21:43 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.createReadTimeoutException(InternalStreamConnection.java:819)
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:807)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:857)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.doHeartbeat(DefaultServerMonitor.java:311)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:262)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+	... 5 common frames omitted
+2026-05-07 21:21:43 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=85613875, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000016e, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4bdf4d9fdfd41b2731e4, counter=6}, lastWriteDate=Thu May 07 21:21:43 GMT+05:30 2026, lastUpdateTimeNanos=92557117879083}
+2026-05-07 21:21:43 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 with max election id 7fffffff000000000000016e and max set version 309
+2026-05-07 21:21:46 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.createReadTimeoutException(InternalStreamConnection.java:819)
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:807)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:857)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.doHeartbeat(DefaultServerMonitor.java:311)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:262)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+	... 5 common frames omitted
+2026-05-07 21:21:47 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=89528458, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4b8b7dc64436d824a035, counter=4}, lastWriteDate=Thu May 07 21:21:47 GMT+05:30 2026, lastUpdateTimeNanos=92560331290458}
+2026-05-07 21:21:47 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.createReadTimeoutException(InternalStreamConnection.java:819)
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:807)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:857)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.doHeartbeat(DefaultServerMonitor.java:311)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:262)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+	... 5 common frames omitted
+2026-05-07 21:21:47 [cluster-ClusterId{value='69fcad08defda53b1347faec', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=98685792, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az3'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4c315d2e4160a8b66b07, counter=3}, lastWriteDate=Thu May 07 21:21:47 GMT+05:30 2026, lastUpdateTimeNanos=92560731971624}
+2026-05-07 21:24:40 [http-nio-8080-exec-1] INFO  c.r.j.controller.JournalController - inside addEntry method!
+2026-05-07 21:28:40 [http-nio-8080-exec-4] INFO  c.r.j.controller.JournalController - inside addEntry method!
+2026-05-07 21:31:04 [RMI TCP Connection(27)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-05-07 21:31:04 [RMI TCP Connection(27)-127.0.0.1] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-07 21:31:04 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:31:04 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-07 21:31:04 [RMI TCP Connection(27)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:31:05 [main] INFO  c.raikar.journal.JournalApplication - Starting JournalApplication using Java 21.0.7 with PID 5964 (/Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp/target/classes started by nehamanjunathraikar in /Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp)
+2026-05-07 21:31:05 [main] INFO  c.raikar.journal.JournalApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-07 21:31:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-05-07 21:31:06 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 33 ms. Found 2 MongoDB repository interfaces.
+2026-05-07 21:31:06 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-07 21:31:06 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:31:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 21:31:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-05-07 21:31:06 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 823 ms
+2026-05-07 21:31:06 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"application": {"name": "Cluster0"}, "driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "15.6"}, "platform": "Java/Eclipse Adoptium/21.0.7+6-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='neha', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@48cb2d73, com.mongodb.Jep395RecordCodecProvider@243bf087, com.mongodb.KotlinCodecProvider@3086f480, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.egajdca.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-ohep9w-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='Cluster0', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-05-07 21:31:06 [cluster-ClusterId{value='69fcb742802f06ec8d3364b9', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 21:31:06 [cluster-ClusterId{value='69fcb742802f06ec8d3364b9', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 21:31:06 [cluster-ClusterId{value='69fcb742802f06ec8d3364b9', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 21:31:07 [main] INFO  org.mongodb.driver.cluster - Waiting for server to become available for operation createIndexes with ID 5. Remaining time: 29997 ms. Selector: WritableServerSelector, topology description: {type=REPLICA_SET, servers=[{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}, {address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}, {address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}].
+2026-05-07 21:31:07 [cluster-ClusterId{value='69fcb742802f06ec8d3364b9', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=256292459, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000016e, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4bdf4d9fdfd41b2731e4, counter=6}, lastWriteDate=Thu May 07 21:31:07 IST 2026, lastUpdateTimeNanos=93120873653791}
+2026-05-07 21:31:07 [cluster-ClusterId{value='69fcb742802f06ec8d3364b9', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=249497708, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az3'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4c315d2e4160a8b66b07, counter=3}, lastWriteDate=Thu May 07 21:31:07 IST 2026, lastUpdateTimeNanos=93120873659041}
+2026-05-07 21:31:07 [cluster-ClusterId{value='69fcb742802f06ec8d3364b9', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=249509208, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4b8b7dc64436d824a035, counter=4}, lastWriteDate=Thu May 07 21:31:07 GMT+05:30 2026, lastUpdateTimeNanos=93120873649416}
+2026-05-07 21:31:07 [cluster-ClusterId{value='69fcb742802f06ec8d3364b9', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 with max election id 7fffffff000000000000016e and max set version 309
+2026-05-07 21:31:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:31:08 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-07 21:31:08 [main] INFO  c.raikar.journal.JournalApplication - Started JournalApplication in 2.611 seconds (process running for 3.323)
+2026-05-07 21:31:18 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07 21:31:18 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-07 21:31:18 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-05-07 21:31:19 [http-nio-8080-exec-2] INFO  c.r.j.controller.JournalController - inside addEntry method of JournalController class
+2026-05-07 21:31:22 [http-nio-8080-exec-3] INFO  c.r.j.controller.JournalController - inside addEntry method of JournalController class
+2026-05-07 21:31:38 [http-nio-8080-exec-4] INFO  c.r.j.controller.JournalController - inside addEntry method of JournalController class
+2026-05-07 21:41:21 [RMI TCP Connection(13)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-05-07 21:41:21 [RMI TCP Connection(13)-127.0.0.1] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-07 21:41:21 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:41:21 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-07 21:41:21 [RMI TCP Connection(13)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:41:23 [main] INFO  c.raikar.journal.JournalApplication - Starting JournalApplication using Java 21.0.7 with PID 6059 (/Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp/target/classes started by nehamanjunathraikar in /Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp)
+2026-05-07 21:41:23 [main] INFO  c.raikar.journal.JournalApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-07 21:41:23 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-05-07 21:41:24 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 2 MongoDB repository interfaces.
+2026-05-07 21:41:24 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-07 21:41:24 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:41:24 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 21:41:24 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-05-07 21:41:24 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 811 ms
+2026-05-07 21:41:24 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"application": {"name": "Cluster0"}, "driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "15.6"}, "platform": "Java/Eclipse Adoptium/21.0.7+6-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='neha', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@48cb2d73, com.mongodb.Jep395RecordCodecProvider@243bf087, com.mongodb.KotlinCodecProvider@3086f480, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.egajdca.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-ohep9w-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='Cluster0', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-05-07 21:41:24 [cluster-ClusterId{value='69fcb9ac9f52ab4e6e11f6f2', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 21:41:24 [cluster-ClusterId{value='69fcb9ac9f52ab4e6e11f6f2', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 21:41:24 [cluster-ClusterId{value='69fcb9ac9f52ab4e6e11f6f2', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 21:41:24 [main] INFO  org.mongodb.driver.cluster - Waiting for server to become available for operation createIndexes with ID 5. Remaining time: 29997 ms. Selector: WritableServerSelector, topology description: {type=REPLICA_SET, servers=[{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}, {address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}, {address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}].
+2026-05-07 21:41:25 [cluster-ClusterId{value='69fcb9ac9f52ab4e6e11f6f2', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=280212208, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000016e, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4bdf4d9fdfd41b2731e4, counter=6}, lastWriteDate=Thu May 07 21:41:25 IST 2026, lastUpdateTimeNanos=93738339269708}
+2026-05-07 21:41:25 [cluster-ClusterId{value='69fcb9ac9f52ab4e6e11f6f2', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=282492792, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4b8b7dc64436d824a035, counter=4}, lastWriteDate=Thu May 07 21:41:25 IST 2026, lastUpdateTimeNanos=93738338304999}
+2026-05-07 21:41:25 [cluster-ClusterId{value='69fcb9ac9f52ab4e6e11f6f2', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=280210583, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az3'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4c315d2e4160a8b66b07, counter=3}, lastWriteDate=Thu May 07 21:41:25 IST 2026, lastUpdateTimeNanos=93738339246874}
+2026-05-07 21:41:25 [cluster-ClusterId{value='69fcb9ac9f52ab4e6e11f6f2', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 with max election id 7fffffff000000000000016e and max set version 309
+2026-05-07 21:41:25 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:41:25 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-07 21:41:25 [main] INFO  c.raikar.journal.JournalApplication - Started JournalApplication in 2.38 seconds (process running for 3.097)
+2026-05-07 21:41:31 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07 21:41:31 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-07 21:41:31 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-05-07 21:41:31 [http-nio-8080-exec-2] INFO  c.r.j.controller.JournalController - inside addEntry method of JournalController class
+2026-05-07 21:41:31 [http-nio-8080-exec-2] INFO  c.r.journal.service.JournalService - inside addEntry method of JournalService
+2026-05-07 21:42:35 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2026-05-07 21:42:35 [RMI TCP Connection(3)-127.0.0.1] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-05-07 21:42:35 [tomcat-shutdown] INFO  o.a.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:42:35 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-05-07 21:42:35 [RMI TCP Connection(3)-127.0.0.1] INFO  o.a.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:43:33 [main] INFO  c.raikar.journal.JournalApplication - Starting JournalApplication using Java 21.0.7 with PID 6110 (/Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp/target/classes started by nehamanjunathraikar in /Users/nehamanjunathraikar/Documents/git/JournalApp/JournalApp)
+2026-05-07 21:43:33 [main] INFO  c.raikar.journal.JournalApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-07 21:43:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-05-07 21:43:34 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 41 ms. Found 2 MongoDB repository interfaces.
+2026-05-07 21:43:34 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-07 21:43:34 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:43:34 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-07 21:43:34 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-05-07 21:43:34 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 845 ms
+2026-05-07 21:43:34 [main] INFO  org.mongodb.driver.client - MongoClient with metadata {"application": {"name": "Cluster0"}, "driver": {"name": "mongo-java-driver|spring-boot|sync", "version": "5.6.2"}, "os": {"type": "Darwin", "name": "Mac OS X", "architecture": "x86_64", "version": "15.6"}, "platform": "Java/Eclipse Adoptium/21.0.7+6-LTS"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='neha', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@3086f480, com.mongodb.Jep395RecordCodecProvider@126f8f24, com.mongodb.KotlinCodecProvider@35e98af, EnumCodecProvider{}]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[127.0.0.1:27017], srvHost=cluster0.egajdca.mongodb.net, srvServiceName=mongodb, mode=MULTIPLE, requiredClusterType=REPLICA_SET, requiredReplicaSetName='atlas-ohep9w-shard-0', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=true, invalidHostNameAllowed=false, context=null}, applicationName='Cluster0', compressorList=[], uuidRepresentation=UNSPECIFIED, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2026-05-07 21:43:34 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 21:43:35 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 21:43:35 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-srv-cluster0.egajdca.mongodb.net] INFO  org.mongodb.driver.cluster - Adding discovered server ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 to client view of cluster
+2026-05-07 21:43:35 [main] INFO  org.mongodb.driver.cluster - Waiting for server to become available for operation createIndexes with ID 5. Remaining time: 29996 ms. Selector: WritableServerSelector, topology description: {type=REPLICA_SET, servers=[{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}, {address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}, {address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=UNKNOWN, state=CONNECTING}].
+2026-05-07 21:43:36 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=630893625, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4b8b7dc64436d824a035, counter=4}, lastWriteDate=Thu May 07 21:43:35 IST 2026, lastUpdateTimeNanos=93869349422291}
+2026-05-07 21:43:36 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, type=REPLICA_SET_PRIMARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=630862083, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az2'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=7fffffff000000000000016e, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4bdf4d9fdfd41b2731e4, counter=6}, lastWriteDate=Thu May 07 21:43:35 GMT+05:30 2026, lastUpdateTimeNanos=93869349390374}
+2026-05-07 21:43:36 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=630877750, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az3'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4c315d2e4160a8b66b07, counter=3}, lastWriteDate=Thu May 07 21:43:35 GMT+05:30 2026, lastUpdateTimeNanos=93869349403874}
+2026-05-07 21:43:36 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Discovered replica set primary ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017 with max election id 7fffffff000000000000016e and max set version 309
+2026-05-07 21:43:37 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-07 21:43:37 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-07 21:43:37 [main] INFO  c.raikar.journal.JournalApplication - Started JournalApplication in 3.392 seconds (process running for 4.153)
+2026-05-07 21:43:42 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07 21:43:42 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-07 21:43:42 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-05-07 21:43:42 [http-nio-8080-exec-1] INFO  c.r.j.controller.JournalController - inside addEntry method of JournalController class
+2026-05-07 21:43:42 [http-nio-8080-exec-1] INFO  c.r.journal.service.JournalService - inside addEntry method of JournalService
+2026-05-07 21:56:16 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.createReadTimeoutException(InternalStreamConnection.java:819)
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:807)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:857)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.doHeartbeat(DefaultServerMonitor.java:311)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:262)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+	... 5 common frames omitted
+2026-05-07 21:56:16 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.createReadTimeoutException(InternalStreamConnection.java:819)
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:807)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:857)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:517)
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:469)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.doHeartbeat(DefaultServerMonitor.java:311)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.lookupServerDescription(DefaultServerMonitor.java:262)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitor.run(DefaultServerMonitor.java:203)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:278)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:304)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:489)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:483)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.bytesInCompletePacket(SSLSocketInputRecord.java:70)
+	at java.base/sun.security.ssl.SSLSocketImpl.readApplicationRecord(SSLSocketImpl.java:1461)
+	at java.base/sun.security.ssl.SSLSocketImpl$AppInputStream.read(SSLSocketImpl.java:1066)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:182)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:824)
+	... 5 common frames omitted
+2026-05-07 21:56:16 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=54542625, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az3'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4c315d2e4160a8b66b07, counter=3}, lastWriteDate=Thu May 07 21:56:16 GMT+05:30 2026, lastUpdateTimeNanos=94630152552333}
+2026-05-07 21:56:16 [cluster-ClusterId{value='69fcba2e55a3481f240c2bbc', description='Cluster0'}-ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, type=REPLICA_SET_SECONDARY, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=25, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=52343625, minRoundTripTimeNanos=0, setName='atlas-ohep9w-shard-0', canonicalAddress=ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, hosts=[ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-00.egajdca.mongodb.net:27017, ac-3xnzrvh-shard-00-01.egajdca.mongodb.net:27017], passives=[], arbiters=[], primary='ac-3xnzrvh-shard-00-02.egajdca.mongodb.net:27017', tagSet=TagSet{[Tag{name='availabilityZone', value='aps1-az1'}, Tag{name='cacheState', value='READY'}, Tag{name='diskState', value='READY'}, Tag{name='nodeType', value='ELECTABLE'}, Tag{name='provider', value='AWS'}, Tag{name='region', value='AP_SOUTH_1'}, Tag{name='workloadType', value='OPERATIONAL'}]}, electionId=null, setVersion=309, topologyVersion=TopologyVersion{processId=69fb4b8b7dc64436d824a035, counter=4}, lastWriteDate=Thu May 07 21:56:16 GMT+05:30 2026, lastUpdateTimeNanos=94630165886416}
+2026-05-07 21:59:35 [http-nio-8080-exec-5] INFO  c.r.j.controller.JournalController - inside updateByIdD method of JournalController class
+2026-05-07 22:00:06 [http-nio-8080-exec-6] INFO  c.r.j.controller.JournalController - inside updateByIdD method of JournalController class
+2026-05-07 22:01:08 [http-nio-8080-exec-9] INFO  c.r.j.controller.JournalController - inside getAllEntries method of JournalController class
+2026-05-07 22:01:28 [http-nio-8080-exec-10] INFO  c.r.j.controller.JournalController - inside getAllEntries method of JournalController class
+2026-05-07 22:02:02 [http-nio-8080-exec-2] INFO  c.r.j.controller.JournalController - inside getEntryById method of JournalController class

@@ -1,6 +1,5 @@
 package com.raikar.journal.controller;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,9 +38,13 @@ public class JournalController {
 	@PostMapping("addEntry/{username}")
 	public ResponseEntity<JournalEntry> addEntry(@RequestBody JournalEntry j, @PathVariable String username) {
 		try {
-			log.info("inside addEntry method!");
-			journalService.addEntry(j,username);
-			return new ResponseEntity<>(j,HttpStatus.CREATED);
+			log.info("inside addEntry method of JournalController class");
+			int saved =journalService.addEntry(j,username);
+			if(saved>0) {
+				return new ResponseEntity<>(j,HttpStatus.CREATED);
+			}else {
+				return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+			}
 		}catch(Exception e) {
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 		}
@@ -50,7 +53,7 @@ public class JournalController {
 	@GetMapping("getUserEntries/{username}")
 	public ResponseEntity<?> getAllEntries(@PathVariable String username){
 		try {
-			log.info("inside getAllEntries method!");
+			log.info("inside getAllEntries method of JournalController class");
 			List<JournalEntry> allEntries = null;
 			Optional<User> user = userService.getUserByUsername(username);
 			if(user.isPresent()) {
@@ -70,7 +73,7 @@ public class JournalController {
 	@GetMapping("getById/{id}")
 	public ResponseEntity<?> getEntryById(@PathVariable ObjectId id) {
 		try {
-			log.info("inside getEntryById method!");
+			log.info("inside getEntryById method of JournalController class");
 			Optional<JournalEntry> j = journalService.getEntryById(id);
 			if(j.isPresent() ){
 				return new ResponseEntity<>(j.get(), HttpStatus.OK);
@@ -82,9 +85,9 @@ public class JournalController {
 	}
 
 	@PutMapping("updateById/{id}")
-	public ResponseEntity<?>  updateByIdD(@RequestBody JournalEntry j,@PathVariable ObjectId id, String username) {
+	public ResponseEntity<?>  updateById(@RequestBody JournalEntry j,@PathVariable ObjectId id, String username) {
 		try {
-			log.info("inside updateByIdD method!");
+			log.info("inside updateByIdD method of JournalController class");
 			JournalEntry j1 = journalService.getEntryById(id).orElse(null);
 			if(j1!=null ){
 				j1.setTitle(j.getTitle()!=null && !j.getTitle().equals("")?j.getTitle():j1.getTitle());
@@ -101,7 +104,7 @@ public class JournalController {
 	@DeleteMapping("deleteById/{username}/{id}")
 	public ResponseEntity<?> deleteById(@PathVariable String username, @PathVariable ObjectId id) {
 		try {
-			log.info("inside deleteById method!");
+			log.info("inside deleteById method of JournalController class");
 				journalService.deleteById(username,id);
 				return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}catch(Exception e) {

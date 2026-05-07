@@ -12,9 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
 import com.raikar.journal.entity.JournalEntry;
 import com.raikar.journal.repository.JournalRepo;
 import com.raikar.journal.repository.UserRepo;
+
+import lombok.extern.slf4j.Slf4j;
+
 import com.raikar.journal.entity.User;
 
 @Service
+@Slf4j
 public class JournalService {
 
 	@Autowired
@@ -24,15 +28,25 @@ public class JournalService {
 	public UserService userService;
 
 	@Transactional
-	public void addEntry(JournalEntry j, String username) {
-		Optional<User> u = userService.getUserByUsername(username);
-		if(u.isPresent()) {
-			User user = u.get();
-			j.setDateTime(LocalDateTime.now());
-			JournalEntry saved = journalRepo.save(j);
-			user.getJournal_entries().add(saved);
-			userService.addUser(user);
+	public int addEntry(JournalEntry j, String username) {
+		try {
+			log.info("inside addEntry method of JournalService");
+			Optional<User> u = userService.getUserByUsername(username);
+			if(u.isPresent()) {
+				log.info("User is present - "+username);
+				User user = u.get();
+				j.setDateTime(LocalDateTime.now());
+				JournalEntry saved = journalRepo.save(j);
+				user.getJournal_entries().add(saved);
+				userService.addUser(user);
+				return 1;
+			}
+			return 0;
+		}catch(Exception e) {
+			log.error("Exception occured in addEntry method in JournalService class - "+e.getMessage());
+			throw new RuntimeException();
 		}
+		
 		
 	}
 
